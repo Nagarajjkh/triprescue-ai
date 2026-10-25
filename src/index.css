@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #0a1428;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle route-line background pattern used on dark hero panels */
+.route-bg {
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(232, 144, 32, 0.10), transparent 38%),
+    radial-gradient(circle at 82% 70%, rgba(63, 95, 176, 0.18), transparent 42%);
+}
+
+.route-line {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.35) 0 8px,
+    transparent 8px 16px
+  );
+}
+
+/* Thin custom scrollbar for the agent activity panel */
+.thin-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: rgba(15, 29, 58, 0.25); border-radius: 999px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+/* Print styles: only the recovery plan prints, chrome is hidden */
+@media print {
+  .no-print { display: none !important; }
+  .print-area { box-shadow: none !important; }
+  body { background: #fff; }
+}
